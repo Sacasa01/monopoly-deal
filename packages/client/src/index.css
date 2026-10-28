@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-app: #0B0C10;
+  --bg-window: #13141B;
+  --bg-sidebar: rgba(18, 19, 25, 0.85);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-app);
+  color: #FFFFFF;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glassmorphism Classes */
+.glass-dock {
+  background: rgba(18, 19, 25, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel {
+  background: rgba(19, 20, 27, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-modal {
+  background: rgba(15, 16, 22, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Bencho.dev / Apple Tactile Micro-Interactions */
+.btn-tactile {
+  transition: transform 150ms cubic-bezier(0.22, 1, 0.36, 1), background-color 150ms ease, box-shadow 150ms ease;
+  will-change: transform;
+}
+.btn-tactile:active {
+  transform: scale(0.96);
+}
+
+.card-hover-lift {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Set Complete Pulse */
+@keyframes completeSetPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(255, 184, 0, 0.6);
+  }
+}
+.set-complete-glow {
+  animation: completeSetPulse 2.8s infinite ease-in-out;
+}
